@@ -1,12 +1,17 @@
-// Create MySQL connection pool
+// MySQL Connection Pool
 import mysql from 'mysql2/promise';
-
+import {
+    DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
+} from '$env/static/private';
+ 
+// Connection Pool erstellen — wiederverwendbare DB-Verbindungen
 const pool = mysql.createPool({
-    host: 'htl-datenbank.com',
-    user: 'ronvol20',
-    password: '1INSY\$data',
-    database: 'ronvol20_pdf_management',
-    port: 28474
+    host: DB_HOST,
+    port: DB_PORT,
+    database: DB_NAME,
+    user: DB_USER,
+    password: DB_PASSWORD
 });
-
+ 
 export default pool;
+ 
