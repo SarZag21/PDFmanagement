@@ -38,6 +38,6 @@ export const actions = {
             [username, hashedPassword]
         );
 
-        redirect(303, '/login');
+        throw redirect(303, '/login');
     }
 };
